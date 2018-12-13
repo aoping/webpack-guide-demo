@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nvar urlEscape = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/url-escape.js */ \"./node_modules/css-loader/dist/runtime/url-escape.js\");\nvar ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(/*! ./icon.png */ \"./src/icon.png\"));\n\n// Module\nexports.push([module.i, \".hello{\\n  height: 500px;\\n  color: red;\\n  background: url(\" + ___CSS_LOADER_URL___0___ + \")\\n}\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nvar urlEscape = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/url-escape.js */ \"./node_modules/css-loader/dist/runtime/url-escape.js\");\nvar ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(/*! ./icon.png */ \"./src/icon.png\"));\nvar ___CSS_LOADER_URL___1___ = urlEscape(__webpack_require__(/*! ./iconfont.ttf */ \"./src/iconfont.ttf\"));\n\n// Module\nexports.push([module.i, \".hello{\\n  height: 500px;\\n  color: red;\\n  font-family: 'MyFont';\\n  background: url(\" + ___CSS_LOADER_URL___0___ + \");\\n}\\n\\n@font-face {\\n  font-family: 'MyFont';\\n  src: url(\" + ___CSS_LOADER_URL___1___ + \");\\n  font-weight: 600;\\n  font-style: normal;\\n}\\n\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -184,6 +184,17 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("module.exports = __webpack_require__.p + \"464afa66a2bcaf7582ecb17190f6b9d3.png\";\n\n//# sourceURL=webpack:///./src/icon.png?");
+
+/***/ }),
+
+/***/ "./src/iconfont.ttf":
+/*!**************************!*\
+  !*** ./src/iconfont.ttf ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"733d03815bab7df8557603e9f9bc85a6.ttf\";\n\n//# sourceURL=webpack:///./src/iconfont.ttf?");
 
 /***/ }),
 
