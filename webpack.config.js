@@ -15,10 +15,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
+  // devServer: {
+  //   contentBase: './dist',
+  //   hot: true
+  // },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
