@@ -15,16 +15,23 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  // devServer: {
-  //   contentBase: './dist',
-  //   hot: true
-  // },
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader']
+      }
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management'
     }),
-    new MainfestPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 }
