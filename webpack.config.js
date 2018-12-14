@@ -5,7 +5,7 @@ const MainfestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   entry: {
     app: './src/index.js',
     print: './src/print.js'
@@ -13,7 +13,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    // publicPath: '/'
   },
   devServer: {
     contentBase: './dist'
