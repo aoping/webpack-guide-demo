@@ -3,22 +3,13 @@ const webpack = require('webpack');
 
 module.exports = {
   // mode: 'development',
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+  entry: {
+    polyfills: './src/polyfills.js',
+    index: './src/index.js'
   },
-  module: {
-    rules: [
-      {
-        test: require.resolve('./src/index.js'),
-        use: 'imports-loader?this=>window'
-      },
-      {
-          test: require.resolve('./src/globals.js'),
-          use: 'exports-loader?file,parse=helpers.parse'
-      }
-    ]
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new webpack.ProvidePlugin({

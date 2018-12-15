@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "exports-loader": "^0.7.0",
