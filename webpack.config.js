@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -16,6 +17,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'caching'
     }),
+    // new webpack.NamedModulesPlugin(), // 开发使用
+    new webpack.HashedModuleIdsPlugin(), // 生产使用
   ],
   optimization: {
     runtimeChunk: 'single',
