@@ -7,7 +7,8 @@ module.exports = {
   mode: 'development',
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    another: './src/another-module.js',
+    another1: './src/another-module1.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -19,5 +20,14 @@ module.exports = {
       title: 'Output Management'
     }),
     new MainfestPlugin()
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name (module) {
+        // generate a chunk name...
+        return 'vendors'; //...
+      }
+    }
+   }
 }

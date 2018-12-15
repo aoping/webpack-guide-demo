@@ -1,5 +1,7 @@
 {
+  "another.js": "another.bundle.js",
+  "another1.js": "another1.bundle.js",
   "app.js": "app.bundle.js",
-  "print.js": "print.bundle.js",
+  "vendors.js": "vendors.bundle.js",
   "index.html": "index.html"
 }
