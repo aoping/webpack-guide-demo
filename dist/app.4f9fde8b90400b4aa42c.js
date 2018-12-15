@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["vendors~lodash"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["app"],{
 
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
@@ -31,6 +31,17 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\tmodule.deprecate = function() {};\n\t\tmodule.paths = [];\n\t\t// module.parent = undefined by default\n\t\tif (!module.children) module.children = [];\n\t\tObject.defineProperty(module, \"loaded\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.l;\n\t\t\t}\n\t\t});\n\t\tObject.defineProperty(module, \"id\", {\n\t\t\tenumerable: true,\n\t\t\tget: function() {\n\t\t\t\treturn module.i;\n\t\t\t}\n\t\t});\n\t\tmodule.webpackPolyfill = 1;\n\t}\n\treturn module;\n};\n\n\n//# sourceURL=webpack:///(webpack)/buildin/module.js?");
 
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\")\n\nfunction getComponent() {\n  var element = document.createElement('div');\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n  return element;\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component);\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+
 /***/ })
 
-}]);
+},[["./src/index.js","runtime"]]]);

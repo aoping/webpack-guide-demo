@@ -8,14 +8,16 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'caching'
     }),
   ],
+  optimization: {
+    runtimeChunk: 'single'
+  }
 }
