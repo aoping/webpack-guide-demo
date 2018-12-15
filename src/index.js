@@ -1,7 +1,11 @@
+import 'babel-polyfill';
+import { file, parse } from './globals.js'
+
 function component() {
   var element = document.createElement('div');
   element.innerHTML = join(['Hello', 'webpack'], ' ');
-  this.alert('aaaaaaa')
+  console.log(file)
+  parse()
   return element;
 }
 
