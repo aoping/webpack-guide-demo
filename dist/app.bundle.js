@@ -4,7 +4,7 @@
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
 /******/
-/******/
+/******/ 		var prefetchChunks = data[3] || [];
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
@@ -21,7 +21,22 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/ 		// chunk prefetching for javascript
+/******/ 		var head = document.getElementsByTagName('head')[0];
+/******/ 		prefetchChunks.forEach(function(chunkId) {
+/******/ 			if(installedChunks[chunkId] === undefined) {
+/******/ 				installedChunks[chunkId] = null;
+/******/ 				var link = document.createElement('link');
 /******/
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					link.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				link.rel = "prefetch";
+/******/ 				link.as = "script";
+/******/ 				link.href = jsonpScriptSrc(chunkId);
+/******/ 				head.appendChild(link);
+/******/ 			}
+/******/ 		});
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
@@ -193,6 +208,7 @@
 /******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
+/******/ 	webpackJsonpCallback([[], {}, 0, [0]]);
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
@@ -206,7 +222,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("function getComponent() {\n  return __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7)).then(_ => {\n    var element = document.createElement('div');\n    var _ = _.default;\n\n    element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n\n    return element;\n\n  }).catch(error => 'An error occurred while loading the component');\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component);\n  })\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("async function getComponent() {\n  var element = document.createElement('div');\n  var _ = await __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7));\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n  element.addEventListener('click', function() {\n    console.log('aaaa')\n    __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(res => {\n      var printMe = res.default\n      printMe()\n    })\n  })\n  return element;\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component);\n  })\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
