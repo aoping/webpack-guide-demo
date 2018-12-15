@@ -222,7 +222,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("async function getComponent() {\n  var element = document.createElement('div');\n  var _ = await __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7));\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n  element.addEventListener('click', function() {\n    console.log('aaaa')\n    __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(res => {\n      var printMe = res.default\n      printMe()\n    })\n  })\n  return element;\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component);\n  })\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("async function getComponent() {\n  var element = document.createElement('div');\n  var _ = await __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7));\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n  element.addEventListener('click', function() {\n    __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./print */ \"./src/print.js\")).then(res => {\n      var printMe = res.default\n      printMe()\n    })\n  })\n  return element;\n}\n\ngetComponent().then(component => {\n  document.body.appendChild(component);\n  })\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
