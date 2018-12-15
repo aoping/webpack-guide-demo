@@ -1,17 +1,15 @@
-import _ from 'lodash'
-import printMe from './print.js'
+function getComponent() {
+  return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+    var element = document.createElement('div');
+    var _ = _.default;
 
-function component() {
-  var element = document.createElement('div');
-  var btn = document.createElement('button');
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-  
-  element.appendChild(btn);
-  return element;
+    return element;
+
+  }).catch(error => 'An error occurred while loading the component');
 }
 
-document.body.appendChild(component());
+getComponent().then(component => {
+  document.body.appendChild(component);
+  })
