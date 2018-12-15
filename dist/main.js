@@ -126,7 +126,7 @@ eval("module.exports = function(module) {\n\tif (!module.webpackPolyfill) {\n\t\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function(_) {function component() {\n  var element = document.createElement('div');\n\n  element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n\n  return element;\n}\n\ndocument.body.appendChild(component());\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\")))\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("/* WEBPACK VAR INJECTION */(function(join) {function component() {\n  var element = document.createElement('div');\n\n  element.innerHTML = join(['Hello', 'webpack'], ' ');\n\n  return element;\n}\n\ndocument.body.appendChild(component());\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\")[\"join\"]))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
